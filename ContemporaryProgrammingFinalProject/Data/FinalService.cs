@@ -1,4 +1,5 @@
 ﻿using ContemporaryProgrammingFinalProject.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContemporaryProgrammingFinalProject.Data
 {
@@ -14,102 +15,180 @@ namespace ContemporaryProgrammingFinalProject.Data
 
 		public int? AddFood(FavoriteFood i)
 		{
-			throw new NotImplementedException();
+			var data = this.GetFoodById(i.ID);
+			if (data != null)
+			{
+				return null;
+			}
+			FC.FavoriteFood.Add(i);
+			return FC.SaveChanges();
 		}
 
 		public int? AddHobby(Hobbies i)
 		{
-			throw new NotImplementedException();
+			var data = this.GetHobbyById(i.ID);
+			if (data != null)
+			{
+				return null;
+			}
+			FC.Hobbies.Add(i);
+			return FC.SaveChanges();
 		}
 
 		public int? AddPersonal(PersonalInfo i)
 		{
-			throw new NotImplementedException();
+			var data = this.GetPersonalById(i.ID);
+			if (data != null)
+			{
+				return null;
+			}
+			FC.PersonalInfo.Add(i);
+			return FC.SaveChanges();
 		}
 
 		public int? AddVideoGames(VideoGames i)
 		{
-			throw new NotImplementedException();
+			var data = this.GetVideoGamesById(i.ID);
+			if (data != null)
+			{
+				return null;
+			}
+			FC.VideoGames.Add(i);
+			return FC.SaveChanges();
 		}
+
+
+
+
+
+
 
 		public List<FavoriteFood> GetAllFood()
 		{
-			throw new NotImplementedException();
+			return FC.FavoriteFood.ToList();
 		}
 
 		public List<Hobbies> GetAllHobbies()
 		{
-			throw new NotImplementedException();
+			return FC.Hobbies.ToList();
 		}
 
 		public List<PersonalInfo> GetAllPersonal()
 		{
-			throw new NotImplementedException();
+			return FC.PersonalInfo.ToList();
 		}
 
 		public List<VideoGames> GetAllVideoGames()
 		{
-			throw new NotImplementedException();
+			return FC.VideoGames.ToList();
 		}
+
+
+
+
+
+
 
 		public FavoriteFood GetFoodById(int Id)
 		{
-			throw new NotImplementedException();
+			return FC.FavoriteFood.FirstOrDefault(x => x.ID == Id);
 		}
 
 		public Hobbies GetHobbyById(int Id)
 		{
-			throw new NotImplementedException();
+			return FC.Hobbies.FirstOrDefault(x => x.ID == Id);
 		}
 
 		public PersonalInfo GetPersonalById(int Id)
 		{
-			throw new NotImplementedException();
+			return FC.PersonalInfo.FirstOrDefault(x => x.ID == Id);
 		}
 
 		public VideoGames GetVideoGamesById(int Id)
 		{
-			throw new NotImplementedException();
+			return FC.VideoGames.FirstOrDefault(x => x.ID == Id);
 		}
+
+
+
+
+
+
+
 
 		public int? RemoveFoodById(int Id)
 		{
-			throw new NotImplementedException();
+			var data = this.GetFoodById(Id);
+			if (data != null)
+			{
+				return null;
+			}
+			FC.FavoriteFood.Remove(data);
+			return FC.SaveChanges();
 		}
 
 		public int? RemoveHobbyById(int Id)
 		{
-			throw new NotImplementedException();
+			var data = this.GetHobbyById(Id);
+			if (data != null)
+			{
+				return null;
+			}
+			FC.Hobbies.Remove(data);
+			return FC.SaveChanges();
 		}
 
 		public int? RemovePersonalById(int Id)
 		{
-			throw new NotImplementedException();
+			var data = this.GetPersonalById(Id);
+			if (data != null)
+			{
+				return null;
+			}
+			FC.PersonalInfo.Remove(data);
+			return FC.SaveChanges();
 		}
 
 		public int? RemoveVideoGamesById(int Id)
 		{
-			throw new NotImplementedException();
+			var data = this.GetVideoGamesById(Id);
+			if (data != null)
+			{
+				return null;
+			}
+			FC.VideoGames.Remove(data);
+			return FC.SaveChanges();
 		}
+
+
+
+
+
+
+
 
 		public int? UpdateFood(FavoriteFood i)
 		{
-			throw new NotImplementedException();
+			FC.FavoriteFood.Update(i);
+			return FC.SaveChanges();
 		}
 
 		public int? UpdateHobbies(Hobbies i)
 		{
-			throw new NotImplementedException();
+			FC.Hobbies.Update(i);
+			return FC.SaveChanges();
 		}
 
 		public int? UpdatePersonal(PersonalInfo i)
 		{
-			throw new NotImplementedException();
+			FC.PersonalInfo.Update(i);
+			return FC.SaveChanges();
 		}
 
 		public int? UpdateVideoGames(VideoGames i)
 		{
-			throw new NotImplementedException();
+			FC.VideoGames.Update(i);
+			return FC.SaveChanges();
 		}
 	}
 }
