@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ContemporaryProgrammingFinalProject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class HController : ControllerBase
     {
