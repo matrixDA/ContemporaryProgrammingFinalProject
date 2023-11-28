@@ -2,7 +2,7 @@
 
 namespace ContemporaryProgrammingFinalProject.Controllers
 {
-    public class PersonalInfoController : Controller
+    public class PIController : Controller
     {
         public IActionResult Index()
         {
