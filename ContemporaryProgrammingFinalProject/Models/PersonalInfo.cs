@@ -4,13 +4,13 @@
 	{
 		public int ID { get; set; }
 
-		public String Member { get; set; }
+		public string Member { get; set; }
 
-		public String BirthDate { get; set; }
+		public DateTime BirthDate { get; set; }
 
-		public String CollegeProgram { get; set; }
+		public string CollegeProgram { get; set; }
 
-		public String YearInProgram { get; set; }
+		public string YearInProgram { get; set; }
 
 
 	}

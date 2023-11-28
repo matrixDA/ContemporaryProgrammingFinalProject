@@ -4,15 +4,15 @@
 	{
 		public int ID { get; set; }
 
-		public String Member { get; set; }
+		public string Member { get; set; }
 
-		public String Breakfast { get; set; }
+		public string Breakfast { get; set; }
 
-		public String Lunch { get; set; }
+		public string Lunch { get; set; }
 
-		public String Dinner { get; set; }
+		public string Dinner { get; set; }
 
-		public String Snack { get; set; }
+		public string Snack { get; set; }
 
 
 	}
