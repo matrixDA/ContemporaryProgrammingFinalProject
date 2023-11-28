@@ -1,3 +1,6 @@
+using ContemporaryProgrammingFinalProject.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,10 +8,14 @@ builder.Services.AddControllersWithViews();
 
 
 // Add context from JSON
+builder.Services.AddDbContext<FinalContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FinalContext")));
 
 builder.Services.AddSwaggerDocument();
 
 // add contract
+builder.Services.AddScoped<IFinalService, FinalService>();
+
 
 var app = builder.Build();
 
@@ -22,6 +29,11 @@ if (!app.Environment.IsDevelopment())
 }
 
 // Add scope so the database updates automatically
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<FinalContext>();
+    context.Database.EnsureCreated();
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

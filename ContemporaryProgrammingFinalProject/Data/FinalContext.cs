@@ -184,16 +184,5 @@ namespace ContemporaryProgrammingFinalProject.Data
 
                 );
         }
-
-
-		public DbSet<FavoriteFood> FavoriteFood { get; set; }
-
-		public DbSet<Hobbies> Hobbies { get; set; }
-
-		public DbSet<PersonalInfo> PersonalInfo { get; set; }
-
-		public DbSet<VideoGames> VideoGames { get; set; }
-
-
 	}
 }
