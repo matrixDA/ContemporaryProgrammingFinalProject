@@ -7,10 +7,10 @@ namespace ContemporaryProgrammingFinalProject.Data
     {
         public FinalContext(DbContextOptions<FinalContext> options) : base(options) { }
 
-        DbSet<FavoriteFood> FavoriteFood { get; set; }
-        DbSet<Hobbies> Hobbies { get; set;}
-        DbSet<PersonalInfo> PersonalInfo { get; set; }
-        DbSet<VideoGames> VideoGames { get; set; }
+        public DbSet<FavoriteFood> FavoriteFood { get; set; }
+        public DbSet<Hobbies> Hobbies { get; set;}
+        public DbSet<PersonalInfo> PersonalInfo { get; set; }
+        public DbSet<VideoGames> VideoGames { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
