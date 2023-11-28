@@ -16,5 +16,9 @@
 
 		public string Rank { get; set; }
 
+		public string GetText()
+		{
+			return $" {ID} \t {Member} \t {Title} \t {Developer} \t {PlayTime} \t {Genre} \t {Rank}";
+		}
 	}
 }
