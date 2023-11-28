@@ -4,14 +4,17 @@
 	{
 		public int ID { get; set; }
 
-		public String Member { get; set; }
+		public string Member { get; set; }
 
-		public String Hobby { get; set; }
+		public string Hobby { get; set; }
 
-		public String IntrestLevel { get; set; }
+		public string InterestLevel { get; set; }
 
-		public String Discovery { get; set; }
+		public string Discovery { get; set; }
 
-
-	}
+        public string GetText()
+        {
+            return $" {ID} \t {Member} \t {Hobby} \t {InterestLevel} \t {Discovery}";
+        }
+    }
 }

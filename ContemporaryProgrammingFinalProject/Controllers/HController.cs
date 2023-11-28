@@ -5,7 +5,7 @@ namespace ContemporaryProgrammingFinalProject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FFController : ControllerBase
+    public class HController : ControllerBase
     {
     }
 }
