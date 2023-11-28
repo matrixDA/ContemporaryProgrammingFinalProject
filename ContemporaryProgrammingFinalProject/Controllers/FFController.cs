@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContemporaryProgrammingFinalProject.Controllers
 {
-    public class FFController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class FFController : ControllerBase
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }
