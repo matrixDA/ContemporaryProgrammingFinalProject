@@ -1,38 +1,40 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ContemporaryProgrammingFinalProject.Data;
 using ContemporaryProgrammingFinalProject.Models;
-using ContemporaryProgrammingFinalProject.Data;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContemporaryProgrammingFinalProject.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
-    public class PIController : Controller
+    [ApiController]
+    public class FFController : ControllerBase
     {
         IFinalService ctx;
-        public PIController(IFinalService context)
+        public FFController(IFinalService context)
         {
             ctx = context;
         }
-
+        //FavoriteFoodAPI
         [HttpGet]
-        [Route("api/getproducts")]
-        public IActionResult Get()
+        [Route("api/getfood")]
+        public IActionResult GetFood()
         {
-            return Ok(ctx.GetAllInfo());
-        }
-        [HttpGet("id")]
-        public IActionResult Get(int id)
-        {
-            return Ok(ctx.GetInfoById(id));
+            return Ok(ctx.GetAllFood());
         }
 
-        [HttpPost]
-        public IActionResult Post(PersonalInfo p)
+        [HttpGet("id")]
+        public IActionResult GetFood(int id)
         {
-            var result = ctx.AddInfo(p);
+            return Ok(ctx.GetFoodById(id));
+        }
+
+        [HttpPost("api/addfood")]
+        public IActionResult PostFood(FavoriteFood i)
+        {
+            var result = ctx.AddFood(i);
             if (result == null)
             {
-                return StatusCode(500, "A Product with this ID already exists");
+                return StatusCode(500, "An item with this ID already exists");
             }
             if (result == 0)
             {
@@ -41,10 +43,10 @@ namespace ContemporaryProgrammingFinalProject.Controllers
             return Ok();
         }
 
-        [HttpPut]
-        public IActionResult Put(PersonalInfo p)
+        [HttpPut("api/updatefood")]
+        public IActionResult PutFood(FavoriteFood i)
         {
-            var result = ctx.UpdateInfo(p);
+            var result = ctx.UpdateFood(i);
             if (result == 0)
             {
                 return StatusCode(500, "An error occured while processing your request");
@@ -53,20 +55,21 @@ namespace ContemporaryProgrammingFinalProject.Controllers
         }
 
         [HttpDelete("id")]
-        [Route("api/delete")]
-        public IActionResult Delete(int id)
+        [Route("api/deletefood")]
+        public IActionResult DeleteFood(int id)
         {
-            var product = ctx.GetInfoById(id);
+            var product = ctx.GetFoodById(id);
             if (product == null)
             {
                 return NotFound(id);
             }
-            var result = ctx.RemoveInfoById(id);
+            var result = ctx.RemoveFoodById(id);
             if (result == 0)
             {
                 return StatusCode(500, "An error occured while processing your request");
             }
             return Ok();
         }
+
     }
 }
