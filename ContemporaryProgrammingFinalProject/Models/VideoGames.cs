@@ -4,7 +4,17 @@
 	{
 		public int ID { get; set; }
 
-		public int Member { get; set; }
+		public String Member { get; set; }
+
+		public String Title { get; set; }
+
+		public String Developer { get; set; }
+
+		public String PlayTime { get; set; }
+
+		public String Genre { get; set; }
+
+		public String Rank { get; set; }
 
 	}
 }
