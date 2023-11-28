@@ -14,6 +14,9 @@
 
 		public string Snack { get; set; }
 
-
-	}
+        public string GetText()
+        {
+            return $" {ID} \t {Member} \t {Breakfast} \t {Lunch} \t {Dinner} \t {Snack}";
+        }
+    }
 }

@@ -12,6 +12,9 @@
 
 		public string YearInProgram { get; set; }
 
-
-	}
+        public string GetText()
+        {
+            return $" {ID} \t {Member} \t {BirthDate} \t {CollegeProgram} \t {YearInProgram}";
+        }
+    }
 }
