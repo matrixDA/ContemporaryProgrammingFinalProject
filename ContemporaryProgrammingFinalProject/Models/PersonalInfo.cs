@@ -12,6 +12,5 @@
 
 		public String YearInProgram { get; set; }
 
-
 	}
 }
