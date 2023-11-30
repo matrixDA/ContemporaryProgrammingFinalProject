@@ -5,9 +5,9 @@ namespace ContemporaryProgrammingFinalProject.Data
 {
 	public class HService : InHService
 	{
-		HContext ctx;
+		FinalContext ctx;
 
-		public HService(HContext context)
+		public HService(FinalContext context)
 		{
 			ctx = context;
 		}

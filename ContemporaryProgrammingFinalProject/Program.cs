@@ -7,20 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-
 // Add context from JSON
-//FavoriteFood
-builder.Services.AddDbContext<FFContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("FFContext")));
-//PersonalInfo
-builder.Services.AddDbContext<PIContext>(options =>
-	options.UseSqlServer(builder.Configuration.GetConnectionString("PIContext")));
-//Hobbies
-builder.Services.AddDbContext<HContext>(options =>
-	options.UseSqlServer(builder.Configuration.GetConnectionString("HContext")));
-//VideoGames
-builder.Services.AddDbContext<VGContext>(options =>
-	options.UseSqlServer(builder.Configuration.GetConnectionString("VGContext")));
+builder.Services.AddDbContext<FinalContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FinalContext")));
+
 
 builder.Services.AddSwaggerDocument();
 
@@ -51,26 +41,8 @@ if (!app.Environment.IsDevelopment())
 //FavoriteFood
 using (var scope = app.Services.CreateScope())
 {
-    var contextFF = scope.ServiceProvider.GetRequiredService<FFContext>();
-    contextFF.Database.EnsureCreated();
-}
-//PersonalInfo
-using (var scope = app.Services.CreateScope())
-{ 
-	var contextPI = scope.ServiceProvider.GetRequiredService<PIContext>();
-    contextPI.Database.EnsureCreated();
-}
-//Hobbies
-using (var scope = app.Services.CreateScope())
-{
-	var contextH = scope.ServiceProvider.GetRequiredService<HContext>();
-	contextH.Database.EnsureCreated();
-}
-//VideoGames
-using (var scope = app.Services.CreateScope())
-{
-	var contextVG = scope.ServiceProvider.GetRequiredService<VGContext>();
-	contextVG.Database.EnsureCreated();
+    var context = scope.ServiceProvider.GetRequiredService<FinalContext>();
+    context.Database.EnsureCreated();
 }
 
 

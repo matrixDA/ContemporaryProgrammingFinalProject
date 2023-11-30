@@ -8,9 +8,9 @@ namespace ContemporaryProgrammingFinalProject.Data
 {
 	public class FFService : InFFService
 	{
-		FFContext ctx;
+		FinalContext ctx;
 
-		public FFService(FFContext context)
+		public FFService(FinalContext context)
 		{
 			ctx = context;
 		}

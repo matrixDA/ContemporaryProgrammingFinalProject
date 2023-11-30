@@ -5,11 +5,11 @@ namespace ContemporaryProgrammingFinalProject.Data
 {
 	public class VGService : InVGService
 	{
-		VGContext ctxVG;
+		FinalContext ctx;
 
-		public VGService(VGContext context)
+		public VGService(FinalContext context)
 		{
-			ctxVG = context;
+			ctx = context;
 		}
 
 		public int? AddGame(VideoGames i)
@@ -19,18 +19,18 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			ctxVG.VideoGames.Add(i);
-			return ctxVG.SaveChanges();
+			ctx.VideoGames.Add(i);
+			return ctx.SaveChanges();
 		}
 
 		public List<VideoGames> GetAllGame()
 		{
-			return ctxVG.VideoGames.ToList();
+			return ctx.VideoGames.ToList();
 		}
 
 		public VideoGames GetGameById(int Id)
 		{
-			return ctxVG.VideoGames.FirstOrDefault(x => x.ID == Id);
+			return ctx.VideoGames.FirstOrDefault(x => x.ID == Id);
 		}
 
 		public int? RemoveGameById(int Id)
@@ -40,14 +40,14 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			ctxVG.VideoGames.Remove(data);
-			return ctxVG.SaveChanges();
+			ctx.VideoGames.Remove(data);
+			return ctx.SaveChanges();
 		}
 
 		public int? UpdateGame(VideoGames i)
 		{
-			ctxVG.VideoGames.Update(i);
-			return ctxVG.SaveChanges();
+			ctx.VideoGames.Update(i);
+			return ctx.SaveChanges();
 		}
 	}
 }

@@ -5,9 +5,9 @@ namespace ContemporaryProgrammingFinalProject.Data
 {
 	public class PIService : InPIService
 	{
-		PIContext ctx;
+		FinalContext ctx;
 
-		public PIService(PIContext context)
+		public PIService(FinalContext context)
 		{
 			ctx = context;
 		}
