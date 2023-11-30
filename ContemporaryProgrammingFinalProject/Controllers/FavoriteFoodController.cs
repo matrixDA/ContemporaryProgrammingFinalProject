@@ -27,6 +27,10 @@ namespace ContemporaryProgrammingFinalProject.Controllers
 		[Route("api/GetFoodByID")]
 		public IActionResult GetFood(int id)
         {
+            if (id == 0)
+            {
+                return Ok(ctxFF.GetAllFood().Take(5));
+            }
             return Ok(ctxFF.GetFoodById(id));
         }
 
