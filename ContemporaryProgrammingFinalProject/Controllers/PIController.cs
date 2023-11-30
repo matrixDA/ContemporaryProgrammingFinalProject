@@ -4,7 +4,7 @@ using ContemporaryProgrammingFinalProject.Data;
 
 namespace ContemporaryProgrammingFinalProject.Controllers
 {
-    [ApiController]
+   /* [ApiController]
     [Route("[controller]")]
     public class PIController : Controller
     {
@@ -68,5 +68,7 @@ namespace ContemporaryProgrammingFinalProject.Controllers
             }
             return Ok();
         }
+   
     }
+   */
 }

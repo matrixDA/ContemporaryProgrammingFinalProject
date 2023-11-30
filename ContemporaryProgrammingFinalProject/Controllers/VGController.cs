@@ -4,6 +4,7 @@ using ContemporaryProgrammingFinalProject.Data;
 
 namespace ContemporaryProgrammingFinalProject.Controllers
 {
+    /*
     [ApiController]
     [Route("[controller]")]
     public class VGController : Controller
@@ -68,5 +69,7 @@ namespace ContemporaryProgrammingFinalProject.Controllers
             }
             return Ok();
         }
+    
     }
+    */
 }
