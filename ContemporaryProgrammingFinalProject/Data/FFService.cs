@@ -1,5 +1,8 @@
-﻿using ContemporaryProgrammingFinalProject.Models;
+﻿using System.Collections;
+using System.Diagnostics.Eventing.Reader;
+using ContemporaryProgrammingFinalProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using NJsonSchema.Annotations;
 
 namespace ContemporaryProgrammingFinalProject.Data
 {
@@ -30,7 +33,9 @@ namespace ContemporaryProgrammingFinalProject.Data
 
 		public FavoriteFood GetFoodById(int Id)
 		{
+
 			return ctx.FavoriteFood.FirstOrDefault(x => x.ID == Id);
+
 		}
 
 		public int? RemoveFoodById(int Id)

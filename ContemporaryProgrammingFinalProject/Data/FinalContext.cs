@@ -54,6 +54,16 @@ namespace ContemporaryProgrammingFinalProject.Data
                     Lunch = "Bun Bo Hue",
                     Dinner = "Fried Rice",
                     Snack = "Chips"
+                },
+
+                new FavoriteFood
+                {
+                    ID = 5,
+                    Member = "Long",
+                    Breakfast = "Mashed Potatoes",
+                    Lunch = "Fried Chicken",
+                    Dinner = "Rice & Chicken breasts",
+                    Snack = "Lay's BBQ Chips",
                 }
 
                 );
@@ -93,10 +103,18 @@ namespace ContemporaryProgrammingFinalProject.Data
                     Hobby = "Video Games",
                     InterestLevel = 7,
                     Discovery = "Played WWE game on my friend's PS2"
+                },
+
+                new Hobbies
+                {
+                    ID = 5,
+                    Member = "Long",
+                    Hobby = "Esports",
+                    InterestLevel = 9,
+                    Discovery = "Played CS:GO after a streak of Minecraft and LOL"
                 }
 
                 );
-
             modelBuilder.Entity<PersonalInfo>().HasData(
 
                 new PersonalInfo
@@ -131,6 +149,15 @@ namespace ContemporaryProgrammingFinalProject.Data
                        ID = 4,
                        Member = "Dinesh Adhikari",
                        BirthDate = new DateTime(2003, 5, 27),
+                       CollegeProgram = "Information Technology",
+                       YearInProgram = "Sophomore",
+                   },
+
+                   new PersonalInfo
+                   {
+                       ID = 5,
+                       Member = "Long Nguyen",
+                       BirthDate = new DateTime(2004, 8, 26),
                        CollegeProgram = "Information Technology",
                        YearInProgram = "Sophomore",
                    }
@@ -181,7 +208,18 @@ namespace ContemporaryProgrammingFinalProject.Data
 					PlayTime = "1 years",
 					Genre = "Roguelite",
 					Rank = "10 out of 10"
-				}
+				},
+
+                new VideoGames
+                {
+                    ID = 5,
+                    Member = "Long",
+                    Title = "Counter Strike: Global Offensive & 2",
+                    Developer = "Valve Corporation",
+                    PlayTime = "4 years",
+                    Genre = "Competitive FPS",
+                    Rank = "10 out of 10"
+                }
 
 				);
 
