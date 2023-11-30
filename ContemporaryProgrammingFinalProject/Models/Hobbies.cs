@@ -8,7 +8,7 @@
 
 		public string Hobby { get; set; }
 
-		public string InterestLevel { get; set; }
+		public int InterestLevel { get; set; }
 
 		public string Discovery { get; set; }
 

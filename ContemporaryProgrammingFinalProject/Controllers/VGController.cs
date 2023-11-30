@@ -5,7 +5,7 @@ using ContemporaryProgrammingFinalProject.Data;
 namespace ContemporaryProgrammingFinalProject.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class VGController : Controller
     {
         IFinalService ctx;

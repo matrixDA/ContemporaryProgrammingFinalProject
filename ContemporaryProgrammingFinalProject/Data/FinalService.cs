@@ -6,11 +6,11 @@ namespace ContemporaryProgrammingFinalProject.Data
 	public class FinalService : IFinalService
 	{
 
-		FinalContext FC;
+		FinalContext ctx;
 
 		public FinalService(FinalContext context)
 		{
-			FC = context;
+			ctx = context;
 		}
 
 		public int? AddFood(FavoriteFood i)
@@ -20,8 +20,8 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			FC.FavoriteFood.Add(i);
-			return FC.SaveChanges();
+			ctx.FavoriteFood.Add(i);
+			return ctx.SaveChanges();
 		}
 
 		public int? AddHobby(Hobbies i)
@@ -31,8 +31,8 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			FC.Hobbies.Add(i);
-			return FC.SaveChanges();
+			ctx.Hobbies.Add(i);
+			return ctx.SaveChanges();
 		}
 
 		public int? AddPersonal(PersonalInfo i)
@@ -42,8 +42,8 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			FC.PersonalInfo.Add(i);
-			return FC.SaveChanges();
+			ctx.PersonalInfo.Add(i);
+			return ctx.SaveChanges();
 		}
 
 		public int? AddVideoGames(VideoGames i)
@@ -53,8 +53,8 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			FC.VideoGames.Add(i);
-			return FC.SaveChanges();
+			ctx.VideoGames.Add(i);
+			return ctx.SaveChanges();
 		}
 
 
@@ -65,22 +65,22 @@ namespace ContemporaryProgrammingFinalProject.Data
 
 		public List<FavoriteFood> GetAllFood()
 		{
-			return FC.FavoriteFood.ToList();
+			return ctx.FavoriteFood.ToList();
 		}
 
 		public List<Hobbies> GetAllHobbies()
 		{
-			return FC.Hobbies.ToList();
+			return ctx.Hobbies.ToList();
 		}
 
 		public List<PersonalInfo> GetAllPersonal()
 		{
-			return FC.PersonalInfo.ToList();
+			return ctx.PersonalInfo.ToList();
 		}
 
 		public List<VideoGames> GetAllVideoGames()
 		{
-			return FC.VideoGames.ToList();
+			return ctx.VideoGames.ToList();
 		}
 
 
@@ -91,22 +91,22 @@ namespace ContemporaryProgrammingFinalProject.Data
 
 		public FavoriteFood GetFoodById(int Id)
 		{
-			return FC.FavoriteFood.FirstOrDefault(x => x.ID == Id);
+			return ctx.FavoriteFood.FirstOrDefault(x => x.ID == Id);
 		}
 
 		public Hobbies GetHobbyById(int Id)
 		{
-			return FC.Hobbies.FirstOrDefault(x => x.ID == Id);
+			return ctx.Hobbies.FirstOrDefault(x => x.ID == Id);
 		}
 
 		public PersonalInfo GetPersonalById(int Id)
 		{
-			return FC.PersonalInfo.FirstOrDefault(x => x.ID == Id);
+			return ctx.PersonalInfo.FirstOrDefault(x => x.ID == Id);
 		}
 
 		public VideoGames GetVideoGamesById(int Id)
 		{
-			return FC.VideoGames.FirstOrDefault(x => x.ID == Id);
+			return ctx.VideoGames.FirstOrDefault(x => x.ID == Id);
 		}
 
 
@@ -123,8 +123,8 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			FC.FavoriteFood.Remove(data);
-			return FC.SaveChanges();
+			ctx.FavoriteFood.Remove(data);
+			return ctx.SaveChanges();
 		}
 
 		public int? RemoveHobbyById(int Id)
@@ -134,8 +134,8 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			FC.Hobbies.Remove(data);
-			return FC.SaveChanges();
+			ctx.Hobbies.Remove(data);
+			return ctx.SaveChanges();
 		}
 
 		public int? RemovePersonalById(int Id)
@@ -145,8 +145,8 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			FC.PersonalInfo.Remove(data);
-			return FC.SaveChanges();
+			ctx.PersonalInfo.Remove(data);
+			return ctx.SaveChanges();
 		}
 
 		public int? RemoveVideoGamesById(int Id)
@@ -156,8 +156,8 @@ namespace ContemporaryProgrammingFinalProject.Data
 			{
 				return null;
 			}
-			FC.VideoGames.Remove(data);
-			return FC.SaveChanges();
+			ctx.VideoGames.Remove(data);
+			return ctx.SaveChanges();
 		}
 
 
@@ -169,26 +169,26 @@ namespace ContemporaryProgrammingFinalProject.Data
 
 		public int? UpdateFood(FavoriteFood i)
 		{
-			FC.FavoriteFood.Update(i);
-			return FC.SaveChanges();
+			ctx.FavoriteFood.Update(i);
+			return ctx.SaveChanges();
 		}
 
 		public int? UpdateHobbies(Hobbies i)
 		{
-			FC.Hobbies.Update(i);
-			return FC.SaveChanges();
+			ctx.Hobbies.Update(i);
+			return ctx.SaveChanges();
 		}
 
 		public int? UpdatePersonal(PersonalInfo i)
 		{
-			FC.PersonalInfo.Update(i);
-			return FC.SaveChanges();
+			ctx.PersonalInfo.Update(i);
+			return ctx.SaveChanges();
 		}
 
 		public int? UpdateVideoGames(VideoGames i)
 		{
-			FC.VideoGames.Update(i);
-			return FC.SaveChanges();
+			ctx.VideoGames.Update(i);
+			return ctx.SaveChanges();
 		}
 	}
 }
