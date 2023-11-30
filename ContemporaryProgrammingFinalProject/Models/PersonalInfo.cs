@@ -1,7 +1,10 @@
-﻿namespace ContemporaryProgrammingFinalProject.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ContemporaryProgrammingFinalProject.Models
 {
 	public class PersonalInfo
 	{
+		[Key]
 		public int ID { get; set; }
 
 		public string Member { get; set; }
