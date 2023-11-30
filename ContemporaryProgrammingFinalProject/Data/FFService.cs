@@ -33,7 +33,6 @@ namespace ContemporaryProgrammingFinalProject.Data
 
 		public FavoriteFood GetFoodById(int Id)
 		{
-
 			return ctx.FavoriteFood.FirstOrDefault(x => x.ID == Id);
 
 		}

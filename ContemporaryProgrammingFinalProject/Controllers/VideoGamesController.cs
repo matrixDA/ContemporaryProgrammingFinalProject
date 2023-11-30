@@ -27,6 +27,12 @@ namespace ContemporaryProgrammingFinalProject.Controllers
 		[Route("api/GetGameByID")]
 		public IActionResult GetGame(int id)
         {
+            var result = ctxVG.GetGameById(id);
+
+            if (result == null)
+            {
+                return Ok(ctxVG.GetAllGame().Take(5));
+            }
             return Ok(ctxVG.GetGameById(id));
         }
 

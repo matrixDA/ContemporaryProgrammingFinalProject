@@ -27,6 +27,12 @@ namespace ContemporaryProgrammingFinalProject.Controllers
 		[Route("api/GetHobbyByID")]
 		public IActionResult GetHobby(int id)
         {
+            var result = ctxH.GetHobbyById(id);
+
+            if (result == null)
+            {
+                return Ok(ctxH.GetAllHobby().Take(5));
+            }
             return Ok(ctxH.GetHobbyById(id));
         }
 

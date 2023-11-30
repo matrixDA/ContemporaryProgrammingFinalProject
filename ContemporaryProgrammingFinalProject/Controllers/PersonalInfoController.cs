@@ -27,6 +27,12 @@ namespace ContemporaryProgrammingFinalProject.Controllers
 		[Route("api/GetInfoByID")]
 		public IActionResult GetInfo(int id)
         {
+            var result = ctxPI.GetInfoById(id);
+
+            if (result == null)
+            {
+                return Ok(ctxPI.GetAllInfo().Take(5));
+            }
             return Ok(ctxPI.GetInfoById(id));
         }
 
